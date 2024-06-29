@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko"  xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="/css/comm.css">
+
+</head>
+<body>
+
+<!-- 헤더 위치 -->
+<th:block th:insert="~{/comm/header}"></th:block>
+
+
+<div id="main" style="font-size:large; alignment: center; padding: 10px 50px ">
+    <p>Web Programming | from 프론트엔드<br>
+    이 자료는 내 스스로 정리를 하기 위하여 작성하고 있습니다.<br>
+    아주 초보적인 내용이지만 저와 같은 분들에게 도움이 되면 그 또한 좋겠습니다.
+    </p>
+    <p>
+        <ul style="list-style-type:square;">
+            <li>개발툴 : vscode</li>
+            <li>Java 버전 : 21</li>
+            <li>DBMS : MaridDB</li>
+            <li>View  : thymeleaf</li>
+            <li>Mapper : Mybatis</li>
+        </ul>
+    </p>
+
+</div>
+
+
+<!-- 푸터 위치 -->
+<th:block th:replace="~{/comm/footer}"></th:block>
+
+</body>
+</html>

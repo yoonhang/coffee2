@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>java script....</title>
+</head>
+<body>
+    Hello, html.....
+
+    <a href="javascript:onFunction()" id="js"><h1>Java Script</h1></a>
+    <p></p>
+    <div id="jQuery">jQuery</div>
+    <div id="JSON">JSON</div>
+    <div id="AJAX">AJAX</div>    
+    <hr>
+
+    <input type="text" id="txtInput" name="txtInput" value="동적 스크립트 내용">
+    <div id="Age">나이는 : </div>
+    <div id="File">/txt/ajax.txt</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    
+    <script>
+        // alert("test");
+        const myObj = {"hello":"Hello json", "age":30};
+        function onFunction() {
+            document.getElementById("txtInput").value = "Vanilla java script....";
+            document.getElementById("Age").innerHTML += "10";
+        }
+
+        $(document).ready(function() {
+            $("#jQuery").click(function() {
+                $("#txtInput").val("Hello Jquery ....");
+                $("#Age").append(20);
+            });
+
+            //json
+            $("#JSON").click(function() {
+                $("#txtInput").val(myObj.hello);
+                $("#Age").append(myObj.age);
+            });
+
+            //ajax
+            $("#AJAX").click(function() {
+                const xmlhttp = new XMLHttpRequest();
+                xmlhttp.onload = function() {
+                    const myAjax = JSON.parse(this.responseText);
+                    $("#txtInput").val(myAjax.hello);
+                    $("#Age").append(myAjax.age);
+                    $("#File").text(this.responseText);
+                }
+                xmlhttp.open("GET", "/txt/ajax_array.txt");
+                xmlhttp.send();
+
+            });
+
+        });
+
+
+    </script>
+</body>
+</html>
